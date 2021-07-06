@@ -45,9 +45,23 @@ function App() {
             Search
           </button>
         </form>
+        </div>
+        <div className="container">
+        {
+          images.map(image => (
+            <div key={image.id} className="card">
+              <img src={image.urls.regular} className="card-img" alt=""/>
+              <div className="card-content">
+                <h1 className="card-title">
+                  {image.alt_description}
+                </h1>
+              </div>
+            </div>
+          ))
+        }
       </div>
-      </div>
-  );
-}
+    </div>
+    );
+    }
 
 export default App;
